@@ -1,0 +1,35 @@
+body {
+    text-align:center;
+}
+
+h2 {
+    color:blue;
+}
+
+.table {
+    display: table;
+    width:100%;
+    table-layout: fixed;
+}
+
+.row {
+    display: table-row;
+}
+
+.column {
+    display: table-cell;
+    width: 33%;
+}
+
+input[id^=select] {
+    display:none;
+    margin: 10px auto;
+}
+
+#choice {
+    width: 82px;
+}
+
+#instructions {
+    width:100%;
+}

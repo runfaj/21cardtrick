@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="./styles.css"/>
+        <script type="text/javascript" src="./require.js"></script>
+        <script type="text/javascript">
+            requirejs(['Board','Column','Card','Player','Dealer','Deck','GameLogic'],function(){
+                if(document.readyState != "complete") {
+                    window.onload = function () {
+                        runGame();
+                    };
+                } else {
+                    runGame();
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h2>21 Card Trick</h2>
+        <div class="table">
+            <div class="row">
+                <div class="column" id="column1"></div>
+                <div class="column" id="column2"></div>
+                <div class="column" id="column3"></div>
+            </div>
+            <div class="row">
+                <div class="column"><input type="button" value="Select" id="select1"/></div>
+                <div class="column"><input type="button" value="Select" id="select2"/></div>
+                <div class="column"><input type="button" value="Select" id="select3"/></div>
+            </div>
+        </div>
+        <br><br>
+        <div id="instructions">
+            Choose a card and remember this card!! Once you're ready, hit the "Go" button.<br>
+            <!--<label id="choiceLabel">Choose a card and input Column,Row. Remember this card!!</label>
+            <br>
+            <input type="text" id="choice" placeholder="example: 1,4"/>-->
+            <input type="button" value="Go" id="submitChoice">
+        </div>
+    </body>
+</html>
