@@ -25,6 +25,9 @@ function runGame() {
             els.column1.style.display = "none";
             els.column2.style.display = "none";
             els.column3.style.display = "none";
+            els.select1.style.display = "none";
+            els.select2.style.display = "none";
+            els.select3.style.display = "none";
             els.instructions.innerHTML = "Please refresh the page to play again.";
         }
     }
