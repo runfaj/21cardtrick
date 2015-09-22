@@ -36,4 +36,25 @@ var Card = function (obj) {
     publicVar.toString = function () {
         return publicVar.face + " of " + publicVar.suit + "s";
     };
+    
+    //reads the card info and returns the appropriate image file location
+    publicVar.getImageName = function(){
+        var face = publicVar.face;
+        var suit = publicVar.suit;
+        switch(face){
+            case "1": face = "one"; break;
+            case "2": face = "two"; break;
+            case "3": face = "three"; break;
+            case "4": face = "four"; break;
+            case "5": face = "five"; break;
+            case "6": face = "six"; break;
+            case "7": face = "seven"; break;
+            case "8": face = "eight"; break;
+            case "9": face = "nine"; break;
+            case "10":face = "ten"; break;
+        }
+        face = face.toUpperCase();
+        suit = suit.toUpperCase();
+        return "./images/" + face + suit + "S.png";
+    }
 };

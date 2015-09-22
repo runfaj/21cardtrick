@@ -21,23 +21,30 @@ function runGame() {
         } else {
             //third round reveals the card (always the 11th in the deck), then displays to user
             var card = dealer.revealCard();
-            alert("Was your card the \n\n" + card.toString() + "?\n\nMwahahahahaha!!");
+            //alert("Was your card the \n\n" + card.toString() + "?\n\nMwahahahahaha!!");
+            $('#popup').fadeIn(function(){
+                $('#guesscard').attr('src',card.getImageName());
+                $('.modal').show("slide", { direction: "up" }, 1000);
+            });
             els.column1.style.display = "none";
             els.column2.style.display = "none";
             els.column3.style.display = "none";
             els.select1.style.display = "none";
             els.select2.style.display = "none";
             els.select3.style.display = "none";
-            els.instructions.innerHTML = "Please refresh the page to play again.";
         }
     }
     
     //helper function - displays the current cards in the columns
     function displayCards() {
+        jQuery('.card-image').animate({left:-2000},1000,function(){$(this).remove()});
         var cols = board.showColumns();
-        els.column1.innerHTML = cols[0].listCards();
-        els.column2.innerHTML = cols[1].listCards();
-        els.column3.innerHTML = cols[2].listCards();
+        /*els.column1.innerHTML = cols[0].listCards("column1");
+        els.column2.innerHTML = cols[1].listCards("column2");
+        els.column3.innerHTML = cols[2].listCards("column3");*/
+        showColumnCards(cols[0],els.column1);
+        showColumnCards(cols[1],els.column2);
+        showColumnCards(cols[2],els.column3);
     }
     
     //capture page elements to interact with

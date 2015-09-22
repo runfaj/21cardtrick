@@ -21,13 +21,16 @@ var Column = function() {
     }
     
     //this function will probably go away with a better UI, but useful for simple UI
-    //it just list
-    publicVar.listCards = function() {
+    //it just lists the 7 cards in a column via html br tags
+    /*publicVar.listCards = function() {
         var str = "";
         for(var i=0;i<rows.length;i++){
             var card = rows[i];
-            str += card.toString() + "<br>";
+            //this is what I was attempting in class. I was using it with the pretty_ui.html
+            var toSend = card.toString();
+            str += convertToImage(toSend, colNumber) + "<br>";
+            //str += card.toString() + "<br>";
         }
         return str;
-    }
+    }*/
 };
